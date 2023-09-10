@@ -10,6 +10,6 @@ if (isset($_SESSION["username"])) {
 }
 
 // Redirect the user to the login page (or any other page as needed)
-header("Location: login.php");
+header("Location: index.html");
 exit();
 ?>
