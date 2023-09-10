@@ -6,22 +6,52 @@
 <body>
 
 <?php
+// Include the database connection
+include("db.php");
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the user input
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Check if the credentials are valid (for simplicity, we're hardcoding them)
-    $valid_username = "user";
-    $valid_password = "password";
+    // Prepare a SQL statement with placeholders
+    $sql = "SELECT * FROM users WHERE username = ? LIMIT 1";
+    $stmt = mysqli_prepare($conn, $sql);
+    
+    if ($stmt) {
+        // Bind parameters and execute the statement
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
 
-    if ($username === $valid_username && $password === $valid_password) {
-        echo "<p>Login successful! Welcome, $username.</p>";
+        // Get the result
+        $result = mysqli_stmt_get_result($stmt);
+
+        // Check if a row was returned
+        if ($row = mysqli_fetch_assoc($result)) {
+            // Verify the hashed password
+            if (password_verify($password, $row['password'])) {
+                // Login successful, start a session
+                session_start();
+                $_SESSION["username"] = $username;
+                header("Location: dashboard.php");
+                exit();
+            } else {
+                echo "Login failed. Please check your username and password.";
+            }
+        } else {
+            echo "Login failed. Please check your username and password.";
+        }
+
+        // Close the statement
+        mysqli_stmt_close($stmt);
     } else {
-        echo "<p>Login failed. Please check your username and password.</p>";
+        // Handle database error gracefully
+        echo "Database error: " . mysqli_error($conn);
     }
 }
+
+// Close the database connection when done (if needed)
+// mysqli_close($conn);
 ?>
 
 <h2>Login Form</h2>
