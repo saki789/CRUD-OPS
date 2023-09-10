@@ -25,26 +25,31 @@
                 <td>Data 1</td>
                 <td>Data 2</td>
                 <td>Data 3</td>
-                <td><button class="button">Button 1</button></td>
+                <td>
+                    <button class="button" onclick="editRow(this)">Edit</button>
+                    <button class="button" onclick="deleteRow(this)">Delete</button>
+                </td>
             </tr>
             <!-- Repeat this row structure for the remaining records -->
         </table>
     </div>
 
-    <div id="tab2" class="tabcontent">
-        <h3>Table 2</h3>
-        <!-- Repeat the table structure for Tab 2 with different data -->
-    </div>
-
-    <div id="tab3" class="tabcontent">
-        <h3>Table 3</h3>
-        <!-- Repeat the table structure for Tab 3 with different data -->
-    </div>
+    <!-- Add similar tables for Tab 2 and Tab 3 with their respective data -->
 
     <script>
         function openTab(evt, tabName) {
             // JavaScript code to handle tab switching
         }
+
+        function editRow(button) {
+            // JavaScript code to handle edit operation
+            // You can retrieve the row data and open a modal for editing
+        }
+
+        function deleteRow(button) {
+            // JavaScript code to handle delete operation
+            // You can confirm the deletion and then remove the row from the table
+        }
     </script>
 </body>
-  </html>
+</html>
