@@ -1,53 +1,95 @@
-/* Reset some default styles */
-* {
+/* Reset some default styles to ensure consistency across browsers */
+body, h1, h2, p, ul, li, form, input, button, table {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Apply a dark background color */
 body {
-    background-color: #222; /* Dark background color */
-    color: #fff; /* Light text color */
     font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background color for the entire page */
+    color: #fff; /* Text color for the entire page */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
-/* Style the table */
+/* Header Styles */
+h1 {
+    background-color: #111; /* Darker background color for the header */
+    color: #fff; /* Text color for the header */
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Header shadow */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Form Styles */
+form {
+    margin: 20px auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #222; /* Dark background color for the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Form shadow */
+    border-radius: 5px;
+    max-width: 400px; /* Limit the form's width */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+label {
+    display: block; /* Display labels on separate lines */
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff; /* Text color for labels */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #777; /* Lighter border color */
+    border-radius: 3px;
+    background-color: #444; /* Darker background color for input fields */
+    color: #fff; /* Text color for input fields */
+}
+
+button[type="submit"] {
+    background-color: #111; /* Darker background color for the submit button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+button[type="submit"]:hover {
+    background-color: #333; /* Darker background color on hover */
+}
+
+/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
-}
-
-table, th, td {
-    border: 1px solid #444; /* Table border color */
+    margin-top: 20px;
+    border: 1px solid #444; /* Lighter border color */
+    background-color: #222; /* Dark background color for the table */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Table shadow */
+    border-radius: 5px;
 }
 
 th, td {
-    padding: 10px;
+    padding: 8px;
     text-align: left;
+    color: #fff; /* Text color for table headers and data */
 }
 
-/* Alternate row colors for better readability */
-tr:nth-child(even) {
-    background-color: #333; /* Darker row color */
-}
+/* Add more CSS rules for your specific design requirements */
 
-/* Header row style */
-th {
-    background-color: #555; /* Dark header background color */
-    color: #fff;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    table {
-        font-size: 14px; /* Reduce font size for smaller screens */
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    form {
+        max-width: 90%; /* Adjust form width for smaller screens */
     }
-}
 
-/* Hover effect */
-tr:hover {
-    background-color: #444; /* Darker background on hover */
-    transition: background-color 0.3s;
+    table {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
 }
