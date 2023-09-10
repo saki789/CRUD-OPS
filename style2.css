@@ -11,9 +11,10 @@ body {
     color: #fff; /* Light text color */
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    
+    flex-direction: column; /* Column layout */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
 }
 
 /* Center the login form */
@@ -28,7 +29,6 @@ form {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    height: 100%; /* Fill up the screen */
 }
 
 /* Style form elements */
