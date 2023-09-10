@@ -1,50 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Duty Roster</title>
+    <title>Duty Roster</title>
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="button.css">
 </head>
 <body>
-    <h1>Create Duty Roster</h1>
-    <form action="create_roster.php" method="POST">
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required><br><br>
-
-        <label for="site">Site:</label>
-        <input type="text" id="site" name="site" required><br><br>
-
-        <label for="guard">Guard:</label>
-        <input type="text" id="guard" name="guard" required><br><br>
-
-        <label for="in_time">In Time:</label>
-        <input type="time" id="in_time" name="in_time" required><br><br>
-
-        <label for="out_time">Out Time:</label>
-        <input type="time" id="out_time" name="out_time" required><br><br>
-
-        <label for="status">Status:</label>
-        <select id="status" name="status" required>
-            <option value="Present">Present</option>
-            <option value="Day Off">Day Off</option>
-            <option value="Sick">Sick</option>
-            <option value="Leave">Leave</option>
-            <option value="Other">Other</option>
-        </select><br><br>
-
-        <label for="total">Total:</label>
-        <input type="text" id="total" name="total" required><br><br>
-
-        <label for="extra">Extra:</label>
-        <input type="text" id="extra" name="extra" required><br><br>
-
-        <label for="grand_total">Grand Total:</label>
-        <input type="text" id="grand_total" name="grand_total" required><br><br>
-
-        <label for="comments">Comments:</label><br>
-        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
-
-        <input type="submit" value="Create Roster">
-    </form>
+    <h1>Duty Roster Table</h1>
+    
+    <?php include("dutyroster.php"); ?>
+    
 </body>
 </html>
