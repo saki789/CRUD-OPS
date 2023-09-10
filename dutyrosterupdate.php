@@ -34,6 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
 
     if ($conn->query($updateSql) === TRUE) {
         echo "Record updated successfully.";
+        // Refresh the page after a successful update
+        echo '<script>window.location.href = "dutyroster.html";</script>';
     } else {
         echo "Error updating record: " . $conn->error;
     }
