@@ -1,0 +1,53 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a dark background color */
+body {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* Light text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+table, th, td {
+    border: 1px solid #444; /* Table border color */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Alternate row colors for better readability */
+tr:nth-child(even) {
+    background-color: #333; /* Darker row color */
+}
+
+/* Header row style */
+th {
+    background-color: #555; /* Dark header background color */
+    color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #444; /* Darker background on hover */
+    transition: background-color 0.3s;
+}
