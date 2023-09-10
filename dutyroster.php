@@ -13,7 +13,7 @@ if (isset($_POST['search'])) {
 if (isset($_POST['edit'])) {
     $editId = $_POST['editId'];
     // Redirect to the edit page with the selected record's ID
-    header("Location: edit.php?id=$editId");
+    header("Location: dutyrosteredit.php?id=$editId");
     exit();
 }
 
