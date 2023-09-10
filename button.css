@@ -1,0 +1,87 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a dark background color */
+body {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* Light text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Style buttons with different colors */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Blue button style */
+.button-blue {
+    background-color: #007bff; /* Blue button color */
+    color: #fff;
+}
+
+.button-blue:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Green button style */
+.button-green {
+    background-color: #4CAF50; /* Green button color */
+    color: #fff;
+}
+
+.button-green:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Red button style */
+.button-red {
+    background-color: #f44336; /* Red button color */
+    color: #fff;
+}
+
+.button-red:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Button animations */
+.button {
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Button shadows */
+.button {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
