@@ -1,0 +1,65 @@
+/* timesheet.css */
+
+/* Dark theme background */
+body {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Header styling */
+h1 {
+    color: #f39c12; /* Orange color for headers */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for tables */
+    margin-bottom: 20px; /* Add some spacing at the bottom */
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Table header styling */
+table th {
+    background-color: #f39c12; /* Orange background for table headers */
+    color: #fff;
+}
+
+/* Table row hover effect */
+table tr:hover {
+    background-color: #444; /* Darken the background on hover */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Button styling with animation */
+button {
+    background-color: #3498db; /* Blue button background color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Form input styling */
+input[type="text"], input[type="date"], input[type="time"], textarea {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Add more specific styling as needed for your Timesheet page */
