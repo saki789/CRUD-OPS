@@ -1,10 +1,26 @@
+-- Create the "site" table
+
+CREATE TABLE site (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    contact VARCHAR(255),
+    description TEXT,
+    start_date DATE NOT NULL,
+    end_date DATE
+);
+
+
+
+
+
 -- Create the "Guards" table
 CREATE TABLE guards (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
-    badge_number VARCHAR(10) NOT NULL UNIQUE,
-    hire_date DATE NOT NULL,
+    grid_number VARCHAR(10) NOT NULL UNIQUE,
+    start DATE NOT NULL,
     comments TEXT
 );
 
