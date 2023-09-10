@@ -34,16 +34,16 @@ form {
 /* Style form elements */
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Increase spacing between labels */
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 15px; /* Increase padding for larger input elements */
+    margin-bottom: 15px; /* Increase spacing between input elements */
     border: 1px solid #555; /* Darker border color */
-    border-radius: 3px;
+    border-radius: 5px; /* Increase border radius */
     background-color: #444; /* Darker input background color */
     color: #fff; /* Light text color */
 }
@@ -52,9 +52,9 @@ input[type="submit"] {
     width: 100%;
     background-color: #007bff; /* Blue button color */
     color: #fff;
-    padding: 10px;
+    padding: 15px; /* Increase padding for larger button */
     border: none;
-    border-radius: 3px;
+    border-radius: 5px; /* Increase border radius */
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -84,4 +84,4 @@ form {
     form {
         width: 90%;
     }
-    }
+}
