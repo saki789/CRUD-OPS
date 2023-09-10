@@ -1,119 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Timesheet Table</title>
-    
-    <!-- Include Bootstrap CSS from CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <title>Guard Management</title>
+    <!-- Include CSS for styling -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div>
+    <h1>Guard Management</h1>
 
-        <ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-  </li>
-        </ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-  <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
-      </div>
-    
-    <div class="container mt-5">
-        <!-- Buttons using Bootstrap classes -->
-        <div class="mb-3">
-            <button class="btn btn-primary" onclick="location.href='create.php'">Create</button>
-            <button class="btn btn-secondary" onclick="location.href='read.php'">Read</button>
-            <button class="btn btn-warning" onclick="location.href='update.php'">Update</button>
-            <button class="btn btn-danger" onclick ="location.href ='delete.php'">Delete</button>
+    <?php
+    // Include database connection (db.php)
+    include('db.php');
 
-<div class="input-group mb-3">
-  <input type="text" class="form-control" id="searchInput" placeholder="Search...">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button">Search</button>
-  </div>
-</div>
+    // CRUD Operations
+    // ...
 
-            
-<div class="container-fluid">
-        
-        <!-- Bootstrap table -->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>In</th>
-                    <th>Out</th>
-                    <th>Total</th>
-                    <th>Extra</th>
-                    <th>Grand Total</th>
-                    <th>Comments</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2023-09-01</td>
-                    <td>08:00 AM</td>
-                    <td>04:00 PM</td>
-                    <td>8 hours</td>
-                    <td>0 hours</td>
-                    <td>8 hours</td>
-                    <td>Normal workday</td>
-                </tr>
-                <tr>
-                    <td>2023-09-01</td>
-                    <td>08:00 AM</td>
-                    <td>04:00 PM</td>
-                    <td>8 hours</td>
-                    <td>0 hours</td>
-                    <td>8 hours</td>
-                    <td>Normal workday</td>
-                </tr>
-                <tr>
-                    <td>2023-09-01</td>
-                    <td>08:00 AM</td>
-                    <td>04:00 PM</td>
-                    <td>8 hours</td>
-                    <td>0 hours</td>
-                    <td>8 hours</td>
-                    <td>Normal workday</td>
-                </tr>
-                <tr>
-                    <td>2023-09-01</td>
-                    <td>08:00 AM</td>
-                    <td>04:00 PM</td>
-                    <td>8 hours</td>
-                    <td>0 hours</td>
-                    <td>8 hours</td>
-                    <td>Normal workday</td>
-                </tr>
-                <!-- Add more rows here -->
-            </tbody>
-        </table>
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
-                        
-            </div>
+    // Search Filter
+    if (isset($_POST['search'])) {
+        $searchTerm = $_POST['searchTerm'];
+        // Perform a database query with the search term
+        // Display results in a table
+    }
 
-    <!-- Include Bootstrap JavaScript from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    // Sorting
+    // ...
+
+    // Pagination
+    $recordsPerPage = 10; // Number of records to display per page
+    $currentPage = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number
+    $offset = ($currentPage - 1) * $recordsPerPage; // Calculate the offset
+
+    // Perform a database query with LIMIT and OFFSET for pagination
+    // Display results in a table
+
+    // Display pagination links
+    // ...
+
+    ?>
+
+    <!-- Search Form -->
+    <form method="POST" action="index.php">
+        <input type="text" name="searchTerm" placeholder="Search by guard name">
+        <input type="submit" name="search" value="Search">
+    </form>
+
+    <!-- Table to Display Guard Data -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Badge Number</th>
+                <th>Hire Date</th>
+                <th>Comments</th>
+                <!-- Add columns for sorting -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Display guard data here -->
+        </tbody>
+    </table>
+
+    <!-- Pagination Links -->
+    <!-- Display pagination links here -->
+
+    <!-- CRUD Buttons -->
+    <!-- Add buttons for Create, Update, and Delete operations -->
+
 </body>
 </html>
