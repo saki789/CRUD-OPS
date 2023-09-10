@@ -27,8 +27,8 @@ if (isset($_GET['id'])) {
         echo "<label for='site'>Site:</label>";
         echo "<input type='text' name='site' id='site' value='{$row['site']}' required><br>";
 
-        echo "<label for='IN_TIME'>IN TIME:</label>";
-        echo "<input type='time' name='IN_TIME' id='IN_TIME' value='{$row['IN TIME']}' required><br>";
+        echo "<label for='IN TIME'>IN TIME:</label>";
+        echo "<input type='time' name='IN TIME' id='IN TIME' value='{$row['IN TIME']}' required><br>";
 
         // Add input fields for other data fields here...
 
