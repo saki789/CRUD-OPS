@@ -2,12 +2,23 @@
 // Include the database connection
 include("db.php");
 
+// Initialize variables for search
+$searchGuard = "";
+if (isset($_POST['search'])) {
+    $searchGuard = $_POST['searchGuard'];
+}
+
 // Query to retrieve data from the duty_roster table
-$sql = "SELECT * FROM duty_roster";
+$sql = "SELECT * FROM duty_roster WHERE guard LIKE '%$searchGuard%'";
 $result = $conn->query($sql);
 
 // Check if there are any records
 if ($result->num_rows > 0) {
+    echo "<form method='post'>"; // Form for search
+    echo "<input type='text' name='searchGuard' placeholder='Search Guards' value='$searchGuard'>";
+    echo "<button type='submit' name='search'>Search</button>";
+    echo "</form>";
+
     echo "<table border='1'>
             <tr>
                 <th>ID</th>
