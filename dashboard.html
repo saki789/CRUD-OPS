@@ -2,65 +2,50 @@
 <html>
 <head>
     <title>Dashboard with Tabs</title>
-    <style>
-        /* Add tab styling here */
-        .tab {
-            overflow: hidden;
-        }
-
-        .tab button {
-            background-color: #f2f2f2;
-            border: none;
-            border-bottom: 2px solid transparent;
-            cursor: pointer;
-            padding: 10px 20px;
-            transition: border-bottom 0.3s;
-        }
-
-        .tab button:hover {
-            border-bottom: 2px solid #007bff;
-        }
-
-        /* Style for active tab */
-        .tab button.active {
-            border-bottom: 2px solid #007bff;
-        }
-
-        /* Add CSS styles for the content sections here */
-        .tab-content {
-            display: none;
-            padding: 20px;
-        }
-
-        /* Show the active content section */
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="tab.css">
 </head>
 <body>
     <h1>Welcome to the Dashboard</h1>
 
     <!-- Tab navigation -->
     <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'dutyRoster')">Duty Roster</button>
+        <button class="tablinks" onclick="openTab(event, 'user')">User</button>
+        <button class="tablinks" onclick="openTab(event, 'userlog')">User Log</button>
         <button class="tablinks" onclick="openTab(event, 'timesheet')">Timesheet</button>
-        <!-- Add similar buttons for other sections -->
+        <button class="tablinks" onclick="openTab(event, 'dutyroster')">Duty Roster</button>
+        <button class="tablinks" onclick="openTab(event, 'site')">Site</button>
+        <button class="tablinks" onclick="openTab(event, 'guards')">Guards</button>
     </div>
 
-    <!-- Section 1: Duty Roster -->
-    <div id="dutyRoster" class="tab-content active">
-        <!-- Content for Duty Roster section -->
-        <p>This is the Duty Roster section.</p>
+    <!-- Section: User -->
+    <div id="user" class="tab-content active">
+        <p>This is the User section.</p>
     </div>
 
-    <!-- Section 2: Timesheet -->
+    <!-- Section: User Log -->
+    <div id="userlog" class="tab-content">
+        <p>This is the User Log section.</p>
+    </div>
+
+    <!-- Section: Timesheet -->
     <div id="timesheet" class="tab-content">
-        <!-- Content for Timesheet section -->
         <p>This is the Timesheet section.</p>
     </div>
 
-    <!-- Add similar content sections for other functionalities -->
+    <!-- Section: Duty Roster -->
+    <div id="dutyroster" class="tab-content">
+        <p>This is the Duty Roster section.</p>
+    </div>
+
+    <!-- Section: Site -->
+    <div id="site" class="tab-content">
+        <p>This is the Site section.</p>
+    </div>
+
+    <!-- Section: Guards -->
+    <div id="guards" class="tab-content">
+        <p>This is the Guards section.</p>
+    </div>
 
     <!-- JavaScript to toggle tabs -->
     <script>
