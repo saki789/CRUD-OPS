@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="button.css">
+    <link rel="stylesheet" type="text/css" href="tab.css">
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'tab1')">Tab 1</button>
+        <button class="tablinks" onclick="openTab(event, 'tab2')">Tab 2</button>
+        <button class="tablinks" onclick="openTab(event, 'tab3')">Tab 3</button>
+    </div>
+
+    <div id="tab1" class="tabcontent">
+        <h3>Table 1</h3>
+        <table class="table">
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+                <td><button class="button">Button 1</button></td>
+            </tr>
+            <!-- Repeat this row structure for the remaining records -->
+        </table>
+    </div>
+
+    <div id="tab2" class="tabcontent">
+        <h3>Table 2</h3>
+        <!-- Repeat the table structure for Tab 2 with different data -->
+    </div>
+
+    <div id="tab3" class="tabcontent">
+        <h3>Table 3</h3>
+        <!-- Repeat the table structure for Tab 3 with different data -->
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            // JavaScript code to handle tab switching
+        }
+    </script>
+</body>
+  </html>
