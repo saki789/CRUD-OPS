@@ -2,10 +2,30 @@
 // Include the database connection
 include("db.php");
 
-// Initialize variables for search
+// Initialize variables for search and actions
 $searchGuard = "";
+$editId = $deleteId = "";
+
 if (isset($_POST['search'])) {
     $searchGuard = $_POST['searchGuard'];
+}
+
+if (isset($_POST['edit'])) {
+    $editId = $_POST['editId'];
+    // Redirect to the edit page with the selected record's ID
+    header("Location: edit.php?id=$editId");
+    exit();
+}
+
+if (isset($_POST['delete'])) {
+    $deleteId = $_POST['deleteId'];
+    // Perform the delete operation based on the selected record's ID
+    $deleteSql = "DELETE FROM duty_roster WHERE id = $deleteId";
+    if ($conn->query($deleteSql) === TRUE) {
+        echo "Record deleted successfully.";
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
 }
 
 // Query to retrieve data from the duty_roster table
@@ -50,8 +70,14 @@ if ($result->num_rows > 0) {
                 <td>{$row['grand_total']}</td>
                 <td>{$row['comments']}</td>
                 <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <form method='post'>
+                        <input type='hidden' name='editId' value='{$row['id']}'>
+                        <button type='submit' name='edit'>Edit</button>
+                    </form>
+                    <form method='post'>
+                        <input type='hidden' name='deleteId' value='{$row['id']}'>
+                        <button type='submit' name='delete'>Delete</button>
+                    </form>
                 </td>
             </tr>";
     }
